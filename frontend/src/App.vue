@@ -1,7 +1,14 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <MainComponent msg="Welcome to Your Vue.js App" />
-  </div>
+    <v-footer color="primary" padless>
+      <v-row align="center" justify="center" no-gutters>
+        <v-col><v-btn>Main</v-btn></v-col>
+        <v-col><v-btn>Action</v-btn></v-col>
+        <v-col ><v-btn>Quiz</v-btn></v-col>
+      </v-row>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
