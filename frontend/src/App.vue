@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <v-content>
-      <MainComponent msg="Welcome to Your Vue.js App" />
+      <router-view></router-view>
     </v-content>
     <v-bottom-navigation>
       <v-btn v-on:click="navMain">
@@ -21,13 +21,8 @@
 </template>
 
 <script>
-import MainComponent from "./components/Main.vue";
-
 export default {
   name: "app",
-  components: {
-    MainComponent
-  },
   methods: {
     navMain: function() {
       this.$router.push({ path: "/" });
