@@ -1,37 +1,13 @@
-
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "none",
-    "strict": true,
-    "jsx": "preserve",
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    // "sourceMap": true,
-    "baseUrl": ".",
-    "outDir": "./dist",
-    "types": [
-      "node"
-    ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
-  },
-  "include": [
-    "**.ts"
+  "defaultSeverity": "error",
+  "extends": [
+      "tslint:recommended"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "jsRules": {},
+  "rules": {
+      "no-console":false,
+      "max-line-length":false,
+      "quotemark": [true, "single"]
+  },
+  "rulesDirectory": []
 }
