@@ -1,0 +1,36 @@
+[
+    {
+        "question": "Welches Treibhausgas trägt am stärksten zum Klimawandel bei?",
+        "answers": [
+            "Lachgas",
+            "NOx",
+            "Kohlendioxid"
+        ],
+        "correctAnswerIndex": 0,
+        "answerExplaination": "Lachgas wirkt 310 mal so stark wie CO2. Die meisten N2O-Emissionen kommen aus der Landwirtschaft - das Treibhausgaspotenzial von Lachgas aus der Landwirtschaft in Deutschland ist etwa so groß wie 30 Millionen Tonnen CO2.",
+        "source": "NABU"
+    },
+    {
+        "question": "Um wie viel Grad Celsius ist die globale Durchschnittstemperatur seit 1900 gestiegen?",
+        "answers": [
+            "um 0,7°C",
+            "um 3°C",
+            "um 2°C"
+        ],
+        "correctAnswerIndex": 0,
+        "answerExplaination": "Der Anstieg von nur 0,7°C erscheint nicht sonderlich hoch. Doch zwischen einer Eis- und einer Warmzeit, die sich aufgrund natürlicher Faktoren abwechseln, liegt auch nur ein Unterschied von sechs bis sieben Grad Celsius in der globalen Mitteltemperatur.",
+        "source": "Münchener Rück Versicherung"
+    },
+    {
+        "question": "Was ist der Rebound-Effekt?",
+        "answers": [
+            "Bei Nutzung von energieeffizienten Geräten wird das Verhalten geändert und die Geräte werden mehr genutzt",
+            "Je mehr energieeffiziente Geräte ich nutze, umso mehr Energie spare ich",
+            "Wenn der Ball beim Basketball vom Korb zurückspringt und wieder gefangen wird"
+        ],
+        "correctAnswerIndex": 0,
+        "answerExplaination": "Der Rebound-Effekt ist der mengenmäßigen Unterschied zwischen möglichen Ressourceneinsparungen und den tatsächlichen Einsparungen. Somit führt der Rebound-Effekt dazu, dass das Einsparungspotenzial von Effizienzsteigerungen nicht oder nur teilweise realisiert wird.",
+        "source": "NABU"
+    }
+
+]
