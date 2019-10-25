@@ -3,11 +3,10 @@ import QuestionMW from './question';
 
 const router = new Router();
 
-router.get('/', (ctx,_) => {
-	ctx.body = "Hallo Welt";
+router.get('/', (ctx) => {
+  ctx.body = 'Hallo Welt';
 });
 
-
-router.get("/getQuestionOfDay", QuestionMW);
+router.get('/getQuestionOfDay', QuestionMW);
 
 export default router;
