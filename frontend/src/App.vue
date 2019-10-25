@@ -1,10 +1,10 @@
 <template>
   <v-app id="app">
-    <v-content>
-      <MainComponent msg="Welcome to Your Vue.js App" />
+    <v-content >
+      <MainComponent />
     </v-content>
-    <v-bottom-navigation>
-      <v-btn>
+    <v-bottom-navigation color="accent" background-color="primary">
+      <v-btn >
         <span>Main</span>
         <v-icon>mdi-home</v-icon>
       </v-btn>
@@ -22,6 +22,7 @@
 
 <script>
 import MainComponent from "./components/Main.vue";
+
 
 export default {
   name: "app",
