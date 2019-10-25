@@ -25,13 +25,13 @@ export default {
   name: "app",
   methods: {
     navMain: function() {
-      this.$router.push({ path: "/" });
+      this.$router.push({ path: "/" }).catch(() => {});
     },
     navAction: function() {
-      this.$router.push({ path: "/action" });
+      this.$router.push({ path: "/action" }).catch(() => {});
     },
     navQuiz: function() {
-      this.$router.push({ path: "/quiz" });
+      this.$router.push({ path: "/quiz" }).catch(() => {});
     }
   }
 };
