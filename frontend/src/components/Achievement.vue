@@ -7,10 +7,10 @@
         </v-col>
         <v-col cols="8">
           <v-row>
-            <h1>{{title}}</h1>
+            <h1>{{ title }}</h1>
           </v-row>
           <v-row>
-            <v-card-text>{{description}}</v-card-text>
+            <v-card-text>{{ description }}</v-card-text>
           </v-row>
         </v-col>
       </v-row>
