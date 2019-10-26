@@ -1,132 +1,136 @@
 <template>
   <v-container>
     <v-layout text-center wrap>
-      <v-flex xs12>
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        ></v-img>
-      </v-flex>
-
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank"
-            >Discord Community</a
+      <v-alert
+        type="error"
+        v-if="
+          !this.answered
+            .clone()
+            .add(1, 'days')
+            .isBefore(moment())
+        "
+      >
+        Du hast heute bereits die Frage beantwortet, komm morgen wieder.
+      </v-alert>
+      <p
+        v-else-if="
+          this.answered
+            .clone()
+            .add(1, 'days')
+            .isBefore(moment()) && error
+        "
+      >
+        Es lief leider nicht alles glatt, versuche es später noch einmal 😥
+      </p>
+      <v-card
+        v-else-if="
+          this.answered
+            .clone()
+            .add(1, 'days')
+            .isBefore(moment())
+        "
+        class="mx-auto"
+        max-width="344"
+        outlined
+      >
+        <v-card-text>
+          <div class="overline mb-4">Frage von {{ this.question.source }}</div>
+          <div class="headline mb-1 text--primary">Tagesfrage</div>
+          <div>{{ this.question.question }}</div>
+        </v-card-text>
+        <div>
+          <v-btn
+            outlined
+            block
+            color="deep-purple accent-4"
+            v-on:click="solve(0)"
+            >{{ this.question.answers[0] }}</v-btn
           >
-        </p>
-      </v-flex>
-
-      <v-flex mb-5 xs12>
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
+        </div>
+        <div>
+          <v-btn
+            outlined
+            block
+            color="deep-purple accent-4"
+            v-on:click="solve(1)"
+            >{{ this.question.answers[1] }}</v-btn
           >
-            {{ next.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-
-      <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
+        </div>
+        <div>
+          <v-btn
+            outlined
+            block
+            color="deep-purple accent-4"
+            v-on:click="solve(2)"
+            >{{ this.question.answers[2] }}</v-btn
           >
-            {{ link.text }}
-          </a>
-        </v-layout>
-      </v-flex>
+        </div>
+      </v-card>
 
-      <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-layout>
-      </v-flex>
+      <v-dialog v-model="dialog" max-width="344">
+        <v-card outlined>
+          <v-card-title class="headline">{{ this.title }}</v-card-title>
+          <v-card-text>{{ this.question.answerExplaination }}</v-card-text>
+          <v-btn text @click="dialog = false">Schließen</v-btn>
+        </v-card>
+      </v-dialog>
     </v-layout>
   </v-container>
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
-  data: () => ({
-    ecosystem: [
-      {
-        text: "vuetify-loader",
-        href: "https://github.com/vuetifyjs/vuetify-loader"
+  data() {
+    return {
+      question: {
+        source: "",
+        answers: ["", "", ""],
+        question: ""
       },
-      {
-        text: "github",
-        href: "https://github.com/vuetifyjs/vuetify"
-      },
-      {
-        text: "awesome-vuetify",
-        href: "https://github.com/vuetifyjs/awesome-vuetify"
+      error: null,
+      answered: false,
+      dialog: false,
+      title: "TITEL"
+    };
+  },
+  beforeRouteEnter(to, from, next) {
+    fetch("http://localhost:4000/getQuestionOfDay")
+      .then(q => q.json().then(question => next(vm => vm.setData(question))))
+      .catch(err => next(vm => vm.setError(err)));
+  },
+  created() {
+    if (localStorage.answered) {
+      this.answered = moment(localStorage.answered);
+    } else {
+      this.answered = moment()
+        .subtract(1, "days")
+        .subtract(2, "minutes");
+    }
+  },
+  methods: {
+    setData(q) {
+      this.question = q;
+    },
+    setError(e) {
+      this.error = e;
+    },
+    solve(answer) {
+      if (answer == this.question.correctAnswerIndex) {
+        //TODO: Add points
+        this.title = "RICHTIG 🥳";
+        this.dialog = true;
+      } else {
+        this.dialog = true;
+        this.title = "FALSCH 😟";
       }
-    ],
-    importantLinks: [
-      {
-        text: "Documentation",
-        href: "https://vuetifyjs.com"
-      },
-      {
-        text: "Chat",
-        href: "https://community.vuetifyjs.com"
-      },
-      {
-        text: "Made with Vuetify",
-        href: "https://madewithvuejs.com/vuetify"
-      },
-      {
-        text: "Twitter",
-        href: "https://twitter.com/vuetifyjs"
-      },
-      {
-        text: "Articles",
-        href: "https://medium.com/vuetify"
-      }
-    ],
-    whatsNext: [
-      {
-        text: "Explore components",
-        href: "https://vuetifyjs.com/components/api-explorer"
-      },
-      {
-        text: "Select a layout",
-        href: "https://vuetifyjs.com/layout/pre-defined"
-      },
-      {
-        text: "Frequently Asked Questions",
-        href: "https://vuetifyjs.com/getting-started/frequently-asked-questions"
-      }
-    ]
-  })
+      localStorage.answered = moment();
+      this.answered = moment();
+    },
+    moment: function() {
+      return moment();
+    }
+  }
 };
 </script>
