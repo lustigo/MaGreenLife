@@ -20,7 +20,16 @@
     <div>
       <FriendFeed></FriendFeed>
     </div>
-    <v-btn color="accent" dark small absolute bottom right fab>
+    <v-btn
+      color="accent"
+      dark
+      small
+      absolute
+      bottom
+      right
+      fab
+      v-on:click="navToScanCup"
+    >
       <v-icon>mdi-plus</v-icon>
     </v-btn>
   </v-container>
@@ -37,8 +46,11 @@ export default {
     FriendFeed
   },
   methods: {
-    navToDetailPointView: function() {
+    navToDetailPointView() {
       this.$router.push({ path: "/detailPoints" }).catch(() => {});
+    },
+    navToScanCup() {
+      this.$router.push({ path: "/action/cup" }).catch(() => {});
     }
   }
 };
