@@ -37,18 +37,18 @@ insert into eventtype(description, description_personal, score) VALUES("%1 ist B
 insert into eventtype(description, description_personal, score) VALUES("%1 hat die Fahrgastmenge in der Bahn getrackt!", "Du hast die Fahrgastmenge in der Bahn getrackt!", 10);
 insert into eventtype(description, description_personal, score) VALUES("%1 hat die Tagesfrage korrekt beantwortet", "Du hast die Tagesfrage korrekt beantwortet!", 10);
 
-insert into eventtype(description, description_personal, score) VALUES("{title: 'Kilo Saver', 
-description: '10 Becher und damit 1KG CO2 gespart!',
-image: 'https://images.unsplash.com/photo-1569488859134-24b2d490f23f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=640&q=80'}", "", 20);
-insert into eventtype(description, description_personal, score) VALUES("{title: 'Kilo Saver+',
-description: '100 Becher und damit 10KG CO2 gespart!',
-image: 'https://images.unsplash.com/photo-1569488859134-24b2d490f23f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=640&q=80'}", "", 100);
-insert into eventtype(description, description_personal, score) VALUES("{title: 'Vielfahrer',
-description: '10 mal Bahn gefahren. Ein guter Start!', 
-image: 'https://images.unsplash.com/photo-1527295110-5145f6b148d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1317&q=80'}", "", 20);
-insert into eventtype(description, description_personal, score) VALUES("{title: 'VielVIELfahrer',
-description: '10mal Bahn gefahren. Die grüne Alternative zum Auto!', 
-image: 'https://images.unsplash.com/photo-1527295110-5145f6b148d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1317&q=80'}", "", 100);
+insert into eventtype(description, description_personal, score) VALUES('{"title": "Kilo Saver", 
+"description": "10 Becher und damit 1KG CO2 gespart!",
+"image": "https://images.unsplash.com/photo-1569488859134-24b2d490f23f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=640&q=80"}', "", 20);
+insert into eventtype(description, description_personal, score) VALUES('{"title": "Kilo Saver+",
+"description": "100 Becher und damit 10KG CO2 gespart!",
+"image": "https://images.unsplash.com/photo-1569488859134-24b2d490f23f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=640&q=80"}', "", 100);
+insert into eventtype(description, description_personal, score) VALUES('{"title": "Vielfahrer",
+"description": "10 mal Bahn gefahren. Ein guter Start!", 
+"image": "https://images.unsplash.com/photo-1527295110-5145f6b148d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1317&q=80"}', "", 20);
+insert into eventtype(description, description_personal, score) VALUES('{"title": "VielVIELfahrer",
+"description": "10mal Bahn gefahren. Die grüne Alternative zum Auto!", 
+"image": "https://images.unsplash.com/photo-1527295110-5145f6b148d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1317&q=80"}', "", 100);
 
 
 --- example friendlist
@@ -57,8 +57,29 @@ insert into friendlist(user, follows) values(2, 1);
 
 --- example events
 insert into events (type, date, user) values(1, strftime("%s", "now"), 1);
-insert into events (type, date, user) values(2, strftime("%s", "now", "-1 days"), 1);
+insert into events (type, date, user) values(1, strftime("%s", "now", "-1 days"), 1);
 insert into events (type, date, user) values(1, strftime("%s", "now", "-2 days"), 1);
+insert into events (type, date, user) values(1, strftime("%s", "now", "-3 days"), 1);
+insert into events (type, date, user) values(1, strftime("%s", "now", "-4 days"), 1);
+insert into events (type, date, user) values(1, strftime("%s", "now", "-5 days"), 1);
+insert into events (type, date, user) values(1, strftime("%s", "now", "-6 days"), 1);
+insert into events (type, date, user) values(1, strftime("%s", "now", "-7 days"), 1);
+insert into events (type, date, user) values(1, strftime("%s", "now", "-8 days"), 1);
+insert into events (type, date, user) values(1, strftime("%s", "now", "-9 days"), 1);
+
+insert into events (type, date, user) values(2, strftime("%s", "now"), 2);
+insert into events (type, date, user) values(7, strftime("%s", "now", "-1 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-1 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-2 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-3 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-4 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-5 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-6 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-7 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-8 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-9 days"), 2);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-10 days"), 2);
+
 
 
 insert into events (type, date, user) values(1, strftime("%s", "now"), 2);

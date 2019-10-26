@@ -30,6 +30,9 @@ async function PointsHistory(ctx: any) {
 
   for (const user of result) {
     user.description = user.description_personal;
+    try {
+      user.description = JSON.parse(user.description);
+    } catch (e) {}
   }
 
   ctx.body = result;
@@ -45,7 +48,10 @@ async function PointsOfFriendsHistory(ctx: any) {
   );
 
   for (const user of result) {
-    user.description = user.description.replace('%1', user.name);
+    user.description = user.description.replace("%1", user.name);
+    try {
+      user.description = JSON.parse(user.description);
+    } catch (e) {}
   }
 
   ctx.body = result;
