@@ -1,7 +1,12 @@
 import Router from "koa-router";
 import rnvGetStationMW from "./getStation";
 import rnvGetStationMonitorMW from "./getStationMonitor";
-import { PointsGet, PointsPost, PointsHistory } from "./points";
+import {
+  PointsGet,
+  PointsPost,
+  PointsHistory,
+  PointsOfFriendsHistory
+} from "./points";
 import QuestionMW from "./question";
 
 const router = new Router();
@@ -19,6 +24,11 @@ router.get("/points", PointsGet);
  * Parameter: Uid
  */
 router.get("/history", PointsHistory);
+
+/**
+ * Parameter: Uid
+ */
+router.get("/friendHistory", PointsOfFriendsHistory);
 
 /**
  * Body: uid & eventtype (both numbers)

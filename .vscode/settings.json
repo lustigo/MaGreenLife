@@ -3,6 +3,8 @@
         {
             "database": "backend/main.sql",
             "dialect": "SQLite",
+            "isActive": false,
+            "isConnected": false,
             "name": "Main"
         }
     ],
