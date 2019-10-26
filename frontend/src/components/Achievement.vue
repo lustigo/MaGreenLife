@@ -9,7 +9,7 @@
         </v-col>
         <v-col cols="8">
           <v-row>
-            <v-card-title>Kilo Saver</v-card-title>
+            <h1>Kilo Saver</h1>
           </v-row>
           <v-row>
             <v-card-text>You saved 10 cups and 1KG of CO2!</v-card-text>
