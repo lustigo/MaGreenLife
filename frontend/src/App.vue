@@ -16,7 +16,7 @@
       </v-btn>
       <v-btn v-on:click="navAction">
         <span>Action</span>
-        <v-icon>mdi-home</v-icon>
+        <v-icon>mdi-firework</v-icon>
       </v-btn>
       <v-btn v-on:click="navQuiz">
         <span>Quiz</span>

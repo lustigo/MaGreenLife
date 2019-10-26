@@ -35,9 +35,9 @@
       <v-row>
         <v-spacer></v-spacer>
 
-        <v-col cols="4">
-          <v-card color="accent">
-            <span>+ Daily Login</span>
+        <v-col cols="6">
+          <v-card color="accent" id="streak">
+            <span>5x MaCup Becher benutzt 💪</span>
           </v-card>
         </v-col>
         <v-spacer></v-spacer>
@@ -121,5 +121,8 @@ export default {
 #floatingRanking {
   left: 0px;
   bottom: 0px;
+}
+#streak {
+  padding: 5px;
 }
 </style>
