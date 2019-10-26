@@ -30,6 +30,9 @@ router.get('/getQuestionOfDay', QuestionMW);
  */
 router.post('/getStationMonitor', rnvGetStationMonitorMW);
 
+/**
+ * Body: query (String that is likely to be the Stationname)
+ */
 router.post('/getStation', rnvGetStationMW);
 
 export default router;
