@@ -8,7 +8,10 @@
 export default {
   methods: {
     onDecode: code => {
-      console.log(code);
+      if (/^mgl-cup/.test(code)) {
+        //TODO: Send via sendAction
+        console.log(code.slice(8));
+      }
     }
   }
 };
