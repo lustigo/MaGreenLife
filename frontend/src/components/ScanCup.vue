@@ -17,8 +17,17 @@ export default {
   methods: {
     onDecode(code) {
       if (/^mgl-cup/.test(code)) {
-        //TODO: Send via sendAction
-        console.log(code.slice(8));
+        fetch("http://localhost:4000/points", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            uid: localStorage.uid,
+            eventtype: 1
+          })
+        });
+        //console.log(code.slice(8));
         this.scanned = true;
       }
     }
