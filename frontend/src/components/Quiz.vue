@@ -1,7 +1,8 @@
 <template>
   <v-container>
     <v-layout text-center wrap>
-      <p
+      <v-alert
+        type="error"
         v-if="
           !this.answered
             .clone()
@@ -9,8 +10,8 @@
             .isBefore(moment())
         "
       >
-        Du hast heute schon, digga
-      </p>
+        Du hast heute bereits die Frage beantwortet, komm morgen wieder.
+      </v-alert>
       <p
         v-else-if="
           this.answered
