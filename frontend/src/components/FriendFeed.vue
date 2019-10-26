@@ -28,6 +28,14 @@ export default {
       {
         text: "Test2",
         amount: 10
+      },
+      {
+        text: "Test",
+        amount: 5
+      },
+      {
+        text: "Test2",
+        amount: 10
       }
     ]
   })

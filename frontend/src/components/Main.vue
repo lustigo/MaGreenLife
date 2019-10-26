@@ -1,18 +1,26 @@
 <template>
   <v-container>
     <div class="divOnMain">
-      <v-card>
-        <v-row>
-          <v-col col="8">
-            <button v-on:click="navToDetailPointView" id="pointNumber">
-              <span>250</span>
-            </button>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col col="8">+ Daily Login</v-col>
-        </v-row>
+      <v-card id="pointTotal">
+        <button v-on:click="navToDetailPointView" id="pointNumber">
+          <span>250</span>
+        </button>
+        <v-btn id="floating" color="accent" dark small absolute top right fab>
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
       </v-card>
+    </div>
+    <div class="divOnMain">
+      <v-row>
+        <v-spacer></v-spacer>
+
+        <v-col cols="4">
+          <v-card color="accent">
+            <span>+ Daily Login</span>
+          </v-card>
+        </v-col>
+        <v-spacer></v-spacer>
+      </v-row>
     </div>
     <div class="divOnMain">
       <Achievement></Achievement>
@@ -20,9 +28,6 @@
     <div class="divOnMain">
       <FriendFeed></FriendFeed>
     </div>
-    <v-btn color="accent" dark small absolute bottom right fab>
-      <v-icon>mdi-plus</v-icon>
-    </v-btn>
   </v-container>
 </template>
 
@@ -44,11 +49,22 @@ export default {
 };
 </script>
 <style scoped>
+#pointTotal {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 #pointNumber {
   font-size: 36pt;
   height: 200px;
 }
 .divOnMain {
   margin-top: 2px;
+}
+#floating {
+  top: 20px;
+  right: 20px;
 }
 </style>
