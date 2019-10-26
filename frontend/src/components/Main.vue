@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <div>
+    <div class="divOnMain">
       <v-card>
         <v-row>
           <v-col col="8">
@@ -14,10 +14,10 @@
         </v-row>
       </v-card>
     </div>
-    <div>
+    <div class="divOnMain">
       <Achievement></Achievement>
     </div>
-    <div>
+    <div class="divOnMain">
       <FriendFeed></FriendFeed>
     </div>
     <v-btn color="accent" dark small absolute bottom right fab>
@@ -47,5 +47,8 @@ export default {
 #pointNumber {
   font-size: 36pt;
   height: 200px;
+}
+.divOnMain {
+  margin-top: 2px;
 }
 </style>
