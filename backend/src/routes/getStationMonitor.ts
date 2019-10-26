@@ -2,7 +2,7 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import StartInfoApi, {IStationMonitor} from '../rnv/startInfoApi';
 
-interface IGetVehicleInfoBody {
+export interface IGetVehicleInfoBody {
     hafasId: number;
 }
 

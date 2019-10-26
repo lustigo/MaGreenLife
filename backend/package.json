@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc && node dist/index.js",
     "setup": "mkdir dist && cp src/quiz dist/ -r",
-    "initDb": "sqlite3 main.sqlite < main.sql && node --require dotenv/config dist/initRnvDb.js"
+    "initDb": "tsc && sqlite3 main.sqlite < main.sql && node --require dotenv/config dist/initRnvDb.js"
   },
   "repository": {
     "type": "git",
