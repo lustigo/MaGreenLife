@@ -4,7 +4,8 @@
   "description": "Gameification Application for climate friendly behavior. Developed during #climathonMA",
   "main": "dist/index.js",
   "scripts": {
-    "start": "tsc && node --require dotenv/config dist/index.js",
+    "start": "tsc && node dist/index.js",
+    "setup": "mkdir dist && cp src/quiz dist/ -r",
     "initDb": "sqlite3 main.sqlite < main.sql && node --require dotenv/config dist/initRnvDb.js"
   },
   "repository": {

@@ -8,16 +8,17 @@ export default new Vuetify({
     iconfont: "mdi"
   },
   theme: {
+    dark: true,
     themes: {
-      light: {
-        primary: '#2e3440',
-        secondary: '#4c566a',
-        accent: '#50fa7b',
-        error: '#b71c1c',
+      dark: {
+        primary: "#2e3440",
+        secondary: "#4c566a",
+        accent: "#50fa7b",
+        error: "#b71c1c"
       },
       options: {
-        customProperties: true,
-      },
-    },
-  },
+        customProperties: true
+      }
+    }
+  }
 });
