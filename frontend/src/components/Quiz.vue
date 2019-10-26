@@ -1,9 +1,9 @@
 <template>
   <v-container>
     <v-layout text-center wrap>
-      <p v-if="answered">Du hast heute schon, digga</p>
-      <p v-else-if="!answered && error">Es lief leider nicht alles glatt, versuche es später noch einmal 😥</p>
-      <v-card v-else-if="!answered" class="mx-auto" max-width="344" outlined>
+      <p v-if="answered == 'true'">Du hast heute schon, digga</p>
+      <p v-else-if="answered == 'false' && error">Es lief leider nicht alles glatt, versuche es später noch einmal 😥</p>
+      <v-card v-else-if="answered == 'false'" class="mx-auto" max-width="344" outlined>
         <v-card-text>
           <div class="overline mb-4">Frage von {{ this.question.source }}</div>
           <div class="headline mb-1 text--primary">Tagesfrage</div>
