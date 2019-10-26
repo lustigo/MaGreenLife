@@ -5,7 +5,17 @@
         <button v-on:click="navToDetailPointView" id="pointNumber">
           <span>250</span>
         </button>
-        <v-btn id="floating" color="accent" dark small absolute top right fab>
+        <v-btn
+          id="floating"
+          color="accent"
+          dark
+          small
+          absolute
+          top
+          right
+          fab
+          v-on:click="navToScanCup"
+        >
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-card>
@@ -42,8 +52,11 @@ export default {
     FriendFeed
   },
   methods: {
-    navToDetailPointView: function() {
+    navToDetailPointView() {
       this.$router.push({ path: "/detailPoints" }).catch(() => {});
+    },
+    navToScanCup() {
+      this.$router.push({ path: "/action/cup" }).catch(() => {});
     }
   }
 };

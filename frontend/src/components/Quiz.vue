@@ -39,31 +39,19 @@
           <div>{{ this.question.question }}</div>
         </v-card-text>
         <div>
-          <v-btn
-            outlined
-            block
-            color="deep-purple accent-4"
-            v-on:click="solve(0)"
-            >{{ this.question.answers[0] }}</v-btn
-          >
+          <v-btn outlined block color="accent" v-on:click="solve(0)">{{
+            this.question.answers[0]
+          }}</v-btn>
         </div>
         <div>
-          <v-btn
-            outlined
-            block
-            color="deep-purple accent-4"
-            v-on:click="solve(1)"
-            >{{ this.question.answers[1] }}</v-btn
-          >
+          <v-btn outlined block color="accent" v-on:click="solve(1)">{{
+            this.question.answers[1]
+          }}</v-btn>
         </div>
         <div>
-          <v-btn
-            outlined
-            block
-            color="deep-purple accent-4"
-            v-on:click="solve(2)"
-            >{{ this.question.answers[2] }}</v-btn
-          >
+          <v-btn outlined block color="accent" v-on:click="solve(2)">{{
+            this.question.answers[2]
+          }}</v-btn>
         </div>
       </v-card>
 
@@ -118,7 +106,16 @@ export default {
     },
     solve(answer) {
       if (answer == this.question.correctAnswerIndex) {
-        //TODO: Add points
+        fetch("http://localhost:4000/points", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            uid: localStorage.uid,
+            eventtype: 4
+          })
+        });
         this.title = "RICHTIG 🥳";
         this.dialog = true;
       } else {
