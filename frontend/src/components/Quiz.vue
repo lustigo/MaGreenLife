@@ -1,9 +1,9 @@
 <template>
   <v-container>
     <v-layout text-center wrap>
-      <p v-if="answered == 'true'">Du hast heute schon, digga</p>
-      <p v-else-if="answered == 'false' && error">Es lief leider nicht alles glatt, versuche es später noch einmal 😥</p>
-      <v-card v-else-if="answered == 'false'" class="mx-auto" max-width="344" outlined>
+      <p v-if="!(this.answered.clone().add(1,'days').isBefore(moment()))">Du hast heute schon, digga</p>
+      <p v-else-if="this.answered.clone().add(1,'days').isBefore(moment()) && error">Es lief leider nicht alles glatt, versuche es später noch einmal 😥</p>
+      <v-card v-else-if="this.answered.clone().add(1,'days').isBefore(moment())" class="mx-auto" max-width="344" outlined>
         <v-card-text>
           <div class="overline mb-4">Frage von {{ this.question.source }}</div>
           <div class="headline mb-1 text--primary">Tagesfrage</div>
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import moment from 'moment';
+
 export default {
   data() {
     return {
@@ -46,7 +48,11 @@ export default {
       .catch(err => next(vm => vm.setError(err)));
   },
   created() {
-    this.answered = localStorage.answered;
+    if (localStorage.answered) {
+      this.answered = moment(localStorage.answered);
+    } else {
+      this.answered = moment().subtract(1,"days").subtract(2,"minutes");
+    }
   },
   methods: {
     setData(q) {
@@ -64,8 +70,11 @@ export default {
         this.dialog = true;
         this.title = "FALSCH 😟";
       }
-      localStorage.answered = true;
-      this.answered = true;
+      localStorage.answered = moment();
+      this.answered = moment();
+    },
+    moment: function () {
+      return moment();
     }
   }
 };
