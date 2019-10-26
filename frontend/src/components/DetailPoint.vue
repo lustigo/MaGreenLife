@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="half">
-    <v-list>
-       <v-subheader>Ranking</v-subheader>
-      <v-card v-for="(item, i) in friends" :key="i">
-        <v-container>
-          <v-row>
-            <v-col cols="3" class="pointAmount">{{ item.amount }}</v-col>
-            <v-col>
-              <v-card flat class="item-text">{{ item.name }}</v-card>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-card>
-    </v-list>
+      <v-list>
+        <v-subheader>Ranking</v-subheader>
+        <v-card v-for="(item, i) in friends" :key="i">
+          <v-container>
+            <v-row>
+              <v-col cols="3" class="pointAmount">{{ item.amount }}</v-col>
+              <v-col>
+                <v-card flat class="item-text">{{ item.name }}</v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card>
+      </v-list>
     </div>
     <v-divider></v-divider>
     <div class="half">

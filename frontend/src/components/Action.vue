@@ -4,11 +4,7 @@
       <v-list dense>
         <v-subheader>Aktionen</v-subheader>
         <v-list-item-group v-model="item" color="primary">
-          <v-list-item
-            v-for="(item, i) in items"
-            :key="i"
-            v-on:click="item.action()"
-          >
+          <v-list-item v-for="(item, i) in items" :key="i" v-on:click="item.action()">
             <v-list-item-icon>
               <v-icon v-text="item.icon"></v-icon>
             </v-list-item-icon>
