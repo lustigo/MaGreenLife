@@ -1,6 +1,8 @@
 <template>
   <v-card>
     <v-list>
+             <v-subheader>Friend Feed</v-subheader>
+
       <v-card v-for="(item, i) in friendItems" :key="i">
         <v-container>
           <v-row>
