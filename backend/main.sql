@@ -31,9 +31,9 @@ INSERT INTO users(name, username) VALUES("Peter","indeednotpeter");
 INSERT INTO users(name, username) VALUES("Max","max_der_echte");
 
 --- example events
-insert into eventtype(description, score) VALUES("%1 hat den MaCup verwendet!", 50);
-insert into eventtype(description, score) VALUES("%1 ist Bahn gefahren!", 100);
-insert into eventtype(description, score) VALUES("%1 hat die Fahrgastmenge in der Bahn getrackt!", 25);
+insert into eventtype(description, score) VALUES("%1 hat den MaCup verwendet!", 20);
+insert into eventtype(description, score) VALUES("%1 ist Bahn gefahren!", 50);
+insert into eventtype(description, score) VALUES("%1 hat die Fahrgastmenge in der Bahn getrackt!", 10);
 
 --- example friendlist
 insert into friendlist(user, follows) values(1, 2);
