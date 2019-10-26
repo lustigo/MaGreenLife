@@ -45,6 +45,9 @@ export default {
       .then(q => q.json().then(question => next(vm => vm.setData(question))))
       .catch(err => next(vm => vm.setError(err)));
   },
+  created() {
+    this.answered = localStorage.answered;
+  },
   methods: {
     setData(q) {
       this.question = q;
@@ -61,7 +64,7 @@ export default {
         this.dialog = true;
         this.title = "FALSCH 😟";
       }
-      //TODO: Lock correctly
+      localStorage.answered = true;
       this.answered = true;
     }
   }
