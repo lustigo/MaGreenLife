@@ -3,8 +3,8 @@
     <v-app-bar color="primary" dark>
       <v-toolbar-title>Die nächsten Abfahrten</v-toolbar-title>
     </v-app-bar>
-    <v-list v-for="(item, i) in departures.slice(-5)" :key="i">
-      <v-list-item color="accent">
+    <v-list v-for="(item, i) in departures.slice(0, 5)" :key="i">
+      <v-list-item color="accent" v-on:click="navigate(i)">
         <v-list-item-icon v-if="item.lineLabel / 10 >= 1"
           ><v-icon
             >mdi-numeric-{{ Math.floor(item.lineLabel / 10) }}-box</v-icon
@@ -33,6 +33,12 @@ export default {
   methods: {
     setDepartures(departures) {
       this.departures = departures.listOfDepartures;
+    },
+    navigate(i) {
+      this.$router.push({
+        name: "checkin",
+        params: { departure: this.departures[i] }
+      });
     }
   },
   beforeRouteEnter(to, from, next) {
