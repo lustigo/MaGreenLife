@@ -1,19 +1,28 @@
 <template>
   <v-container>
-    <v-card>
-      <v-row>
-        <v-col col="8">
-          <button v-on:click="navToDetailPointView" id="pointNumber">
-            <span>250</span>
-          </button>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col col="8">+ Daily Login</v-col>
-      </v-row>
-    </v-card>
-    <Achievement></Achievement>
-    <FriendFeed></FriendFeed>
+    <div>
+      <v-card>
+        <v-row>
+          <v-col col="8">
+            <button v-on:click="navToDetailPointView" id="pointNumber">
+              <span>250</span>
+            </button>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col col="8">+ Daily Login</v-col>
+        </v-row>
+      </v-card>
+    </div>
+    <div>
+      <Achievement></Achievement>
+    </div>
+    <div>
+      <FriendFeed></FriendFeed>
+    </div>
+    <v-btn color="accent" dark small absolute bottom right fab>
+      <v-icon>mdi-plus</v-icon>
+    </v-btn>
   </v-container>
 </template>
 
