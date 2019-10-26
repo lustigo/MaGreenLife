@@ -15,6 +15,16 @@ async function initRnvDb(filename: string) {
         PRIMARY KEY("hafasId")
         );`);
 
+    await db.all(SQL`CREATE TABLE "occupancy" (
+        "tourId" TEXT NOT NULL,
+        "positionInTour" INTEGER NOT NULL,
+        "lineId" TEXT NOT NULL,
+        "time" TEXT NOT NULL,
+        "userid" INTEGER NOT NULL,
+        "occupancy" INTEGER NOT NULL,
+        PRIMARY KEY("tourId", "positionInTour", "lineId", "time", "userid")
+    );`);
+
     for (const value of response.stations) {
         await db.all(SQL`INSERT INTO "rnv" ("hafasId", "longName", "longitude", "latitude") VALUES (${value.hafasID}, ${value.longName}, ${value.latitude}, ${value.longitude})`);
     }

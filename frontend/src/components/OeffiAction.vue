@@ -6,7 +6,7 @@
           <div class="headline mb-1 text--primary">Abfahrtsbahnhof</div>
           <div>Von welchem Bahnhof fährst du ab?</div>
         </v-card-text>
-        <v-text-field outlined color="accent" v-model="query"></v-text-field>
+        <v-text-field outlined color="accent" v-model="query" @keyup.enter.native="searchStation"></v-text-field>
         <v-btn outlined color="accent" block v-on:click="searchStation"
           >Weiter</v-btn
         >

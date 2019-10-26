@@ -4,6 +4,7 @@ import Main from "./components/Main.vue";
 import DetailPointsView from "./components/DetailPoint.vue";
 import Action from "./components/Action.vue";
 import OeffiAction from "./components/OeffiAction.vue";
+import Checkin from "./components/OeffiCheckin.vue";
 import ScanCup from "./components/ScanCup.vue";
 import SelStation from "./components/OeffiSelStation.vue";
 import FriendsRanking from "./components/FriendsRanking.vue";
@@ -21,6 +22,11 @@ const router = new Router({
       path: "/action/oeffi/selStation/:hafasId",
       name: "selStation",
       component: SelStation
+    },
+    {
+      path: "/action/oeffi/checkin/:departure",
+      name: "checkin",
+      component: Checkin
     },
     { path: "/", component: Main }
   ]
