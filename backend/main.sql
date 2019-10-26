@@ -14,6 +14,7 @@ CREATE TABLE "friendlist" (
 CREATE TABLE "eventtype" (
     "id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
     "description"	TEXT NOT NULL,
+    "description_personal"  TEXT NOT NULL,
     "score" INTEGER NOT NULL
 );
 
@@ -31,10 +32,10 @@ INSERT INTO users(name, username) VALUES("Peter","indeednotpeter");
 INSERT INTO users(name, username) VALUES("Max","max_der_echte");
 
 --- example events
-insert into eventtype(description, score) VALUES("%1 hat den MaCup verwendet!", 20);
-insert into eventtype(description, score) VALUES("%1 ist Bahn gefahren!", 50);
-insert into eventtype(description, score) VALUES("%1 hat die Fahrgastmenge in der Bahn getrackt!", 10);
-insert into eventtype(description, score) VALUES("%1 hat die Tagesfrage korrekt beantwortet", 10);
+insert into eventtype(description, description_personal, score) VALUES("%1 hat den MaCup genutzt!", "Du hast den MaCup genutzt!", 20);
+insert into eventtype(description, description_personal, score) VALUES("%1 ist Bahn/Bus gefahren!", "Du bist mit der Bahn/Bus gefahren!", 50);
+insert into eventtype(description, description_personal, score) VALUES("%1 hat die Fahrgastmenge in der Bahn getrackt!", "Du hast die Fahrgastmenge in der Bahn getrackt!", 10);
+insert into eventtype(description, description_personal, score) VALUES("%1 hat die Tagesfrage korrekt beantwortet", "Du hast die Tagesfrage korrekt beantwortet!", 10);
 
 --- example friendlist
 insert into friendlist(user, follows) values(1, 2);

@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <v-content id="#content">
+    <v-content id="content">
       <router-view></router-view>
     </v-content>
     <v-bottom-navigation
@@ -9,7 +9,6 @@
       background-color="primary"
       fixed
       grow
-      scroll-target="content"
     >
       <v-btn v-on:click="navMain">
         <span>Main</span>
@@ -17,7 +16,7 @@
       </v-btn>
       <v-btn v-on:click="navAction">
         <span>Action</span>
-        <v-icon>mdi-home</v-icon>
+        <v-icon>mdi-firework</v-icon>
       </v-btn>
       <v-btn v-on:click="navQuiz">
         <span>Quiz</span>

@@ -7,6 +7,7 @@ import OeffiAction from "./components/OeffiAction.vue";
 import Checkin from "./components/OeffiCheckin.vue";
 import ScanCup from "./components/ScanCup.vue";
 import SelStation from "./components/OeffiSelStation.vue";
+import FriendsRanking from "./components/FriendsRanking.vue";
 
 const router = new Router({
   routes: [
@@ -15,6 +16,7 @@ const router = new Router({
     { path: "/action/oeffi", component: OeffiAction },
     { path: "/", component: Main },
     { path: "/detailPoints", component: DetailPointsView },
+    { path: "/ranking", component: FriendsRanking },
     { path: "/action/cup", component: ScanCup },
     {
       path: "/action/oeffi/selStation/:hafasId",
