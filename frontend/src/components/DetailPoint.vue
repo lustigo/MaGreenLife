@@ -2,13 +2,13 @@
   <div>
     <div class="half">
       <v-list>
-        <v-subheader>Ranking</v-subheader>
-        <v-card v-for="(item, i) in friends" :key="i">
+        <v-subheader>History</v-subheader>
+        <v-card v-for="(item, i) in history" :key="i">
           <v-container>
             <v-row>
-              <v-col cols="3" class="pointAmount">{{ item.amount }}</v-col>
+              <v-col cols="3" class="pointAmount">+{{ item.score }}</v-col>
               <v-col>
-                <v-card flat class="item-text">{{ item.name }}</v-card>
+                <v-card flat class="item-text">{{ item.description }}</v-card>
               </v-col>
             </v-row>
           </v-container>
@@ -26,7 +26,7 @@
 import FriendFeed from "./FriendFeed.vue";
 export default {
   data: () => ({
-    friends: [
+    history: [
       {
         name: "Lukas",
         amount: 510
@@ -39,6 +39,18 @@ export default {
   }),
   components: {
     FriendFeed
+  },
+  created() {
+    this.loadData();
+  },
+  methods: {
+    loadData() {
+      fetch(`http://localhost:4000/history?uid=${localStorage.uid}`)
+        .then(r => r.json())
+        .then(r => {
+          this.history = r;
+        });
+    }
   }
 };
 </script>
