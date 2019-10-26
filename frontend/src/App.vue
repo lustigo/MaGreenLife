@@ -3,7 +3,11 @@
     <v-content>
       <router-view></router-view>
     </v-content>
-    <v-bottom-navigation id="bottom-navigation" color="accent" background-color="primary">
+    <v-bottom-navigation
+      id="bottom-navigation"
+      color="accent"
+      background-color="primary"
+    >
       <v-btn v-on:click="navMain">
         <span>Main</span>
         <v-icon>mdi-home</v-icon>
@@ -45,7 +49,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-#bottom-navigation>button {
+#bottom-navigation > button {
   height: 100%;
 }
 </style>

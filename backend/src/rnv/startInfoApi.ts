@@ -14,7 +14,7 @@ interface IRnvDeparture {
     newsAvailable: string;
 }
 
-interface IStationMonitor {
+export interface IStationMonitor {
     ticket: string;
     pastRequestText: string;
     updateTime: string;
@@ -28,7 +28,7 @@ interface IStationMonitor {
     projectedTime: string;
     otherTimes: [];
     otherProjectedTimes: [];
-    listOfDepartures: IRnvDeparture;
+    listOfDepartures: IRnvDeparture[];
 }
 
 export default class StartInfoApi {
@@ -45,6 +45,10 @@ export default class StartInfoApi {
     }
 
     public async getStationMonitor(hafasId: number): Promise<IStationMonitor> {
-        return this.client.get(`/regions/rnv/modules/stationmonitor/element?hafasID=${hafasId}&time=null`);
+        return JSON.parse((await this.client.get(`/regions/rnv/modules/stationmonitor/element?hafasID=${hafasId}&time=null`)).body);
+    }
+
+    public async getStations() {
+        return JSON.parse((await this.client.get('/regions/rnv/modules/stations/packages/1')).body);
     }
 }
