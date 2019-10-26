@@ -1,12 +1,15 @@
 <template>
   <v-app id="app">
-    <v-content>
+    <v-content id="#content">
       <router-view></router-view>
     </v-content>
     <v-bottom-navigation
       id="bottom-navigation"
       color="accent"
       background-color="primary"
+      fixed
+      grow
+      scroll-target="content"
     >
       <v-btn v-on:click="navMain">
         <span>Main</span>

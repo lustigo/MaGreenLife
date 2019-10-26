@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "backend/main.sql",
+            "dialect": "SQLite",
+            "name": "Main"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
