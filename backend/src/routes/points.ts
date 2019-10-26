@@ -29,10 +29,11 @@ async function PointsHistory(ctx: any) {
   const result = await ctx.db.all(sql);
 
   for (const user of result) {
-    user.description = user.description_personal;
     try {
       user.description = JSON.parse(user.description);
-    } catch (e) {}
+    } catch (e) {
+      user.description = user.description_personal;
+    }
   }
 
   ctx.body = result;
@@ -44,14 +45,16 @@ async function PointsOfFriendsHistory(ctx: any) {
     INNER JOIN eventtype ON eventtype.id = events.type
     INNER JOIN users ON events.user = users.id
     WHERE (events.user IN (select follows from friendlist where friendlist.user = ${ctx.request.query.uid})) OR events.user = ${ctx.request.query.uid}
+    ORDER BY events.date DESC
     `
   );
 
   for (const user of result) {
-    user.description = user.description.replace("%1", user.name);
     try {
       user.description = JSON.parse(user.description);
-    } catch (e) {}
+    } catch (e) {
+      user.description = user.description.replace("%1", user.name);
+    }
   }
 
   ctx.body = result;
@@ -63,7 +66,7 @@ async function FriendsRannking(ctx: any) {
     INNER JOIN eventtype ON eventtype.id = events.type
     INNER JOIN users ON events.user = users.id
     WHERE (events.user IN (select follows from friendlist where friendlist.user = ${ctx.request.query.uid})) OR events.user = ${ctx.request.query.uid}
-    GROUP BY users.username ORDER BY 'COUNT'
+    GROUP BY users.username ORDER BY COUNT DESC
     `
   );
   ctx.body = result;

@@ -50,6 +50,9 @@ insert into eventtype(description, description_personal, score) VALUES('{"title"
 "description": "10mal Bahn gefahren. Die grüne Alternative zum Auto!", 
 "image": "https://images.unsplash.com/photo-1527295110-5145f6b148d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1317&q=80"}', "", 100);
 
+insert into eventtype(description, description_personal, score) VALUES("%1 hat bei Unverpackt eingekafut!", "Du hast bei Unverpackt eingekauft!", 30);
+insert into eventtype(description, description_personal, score) VALUES("%1 hat Gemüse Mehrwegbeutel benutzt!", "Du hast Gemüse Mehrwegbeutel benutzt!", 15);
+insert into eventtype(description, description_personal, score) VALUES("%1 hat Mehrweg Eierdose!", "Du hast eine Mehrweg Eierdose benutzt!", 30);
 
 --- example friendlist
 insert into friendlist(user, follows) values(1, 2);
@@ -57,25 +60,24 @@ insert into friendlist(user, follows) values(2, 1);
 
 --- example events
 insert into events (type, date, user) values(1, strftime("%s", "now"), 1);
-insert into events (type, date, user) values(1, strftime("%s", "now", "-1 days"), 1);
-insert into events (type, date, user) values(1, strftime("%s", "now", "-2 days"), 1);
-insert into events (type, date, user) values(1, strftime("%s", "now", "-3 days"), 1);
-insert into events (type, date, user) values(1, strftime("%s", "now", "-4 days"), 1);
-insert into events (type, date, user) values(1, strftime("%s", "now", "-5 days"), 1);
-insert into events (type, date, user) values(1, strftime("%s", "now", "-6 days"), 1);
-insert into events (type, date, user) values(1, strftime("%s", "now", "-7 days"), 1);
-insert into events (type, date, user) values(1, strftime("%s", "now", "-8 days"), 1);
-insert into events (type, date, user) values(1, strftime("%s", "now", "-9 days"), 1);
+insert into events (type, date, user) values(5, strftime("%s", "now", "-1 days"), 1);
+insert into events (type, date, user) values(2, strftime("%s", "now", "-1 days"), 1);
+insert into events (type, date, user) values(3, strftime("%s", "now", "-2 days"), 1);
+insert into events (type, date, user) values(4, strftime("%s", "now", "-3 days"), 1);
+insert into events (type, date, user) values(9, strftime("%s", "now", "-4 days"), 1);
+insert into events (type, date, user) values(10, strftime("%s", "now", "-5 days"), 1);
+insert into events (type, date, user) values(11, strftime("%s", "now", "-6 days"), 1);
+
 
 insert into events (type, date, user) values(2, strftime("%s", "now"), 2);
-insert into events (type, date, user) values(7, strftime("%s", "now", "-1 days"), 2);
-insert into events (type, date, user) values(2, strftime("%s", "now", "-1 days"), 2);
-insert into events (type, date, user) values(2, strftime("%s", "now", "-2 days"), 2);
-insert into events (type, date, user) values(2, strftime("%s", "now", "-3 days"), 2);
-insert into events (type, date, user) values(2, strftime("%s", "now", "-4 days"), 2);
-insert into events (type, date, user) values(2, strftime("%s", "now", "-5 days"), 2);
-insert into events (type, date, user) values(2, strftime("%s", "now", "-6 days"), 2);
-insert into events (type, date, user) values(2, strftime("%s", "now", "-7 days"), 2);
+insert into events (type, date, user) values(7, strftime("%s", "now"), 2);
+insert into events (type, date, user) values(1, strftime("%s", "now", "-1 days"), 2);
+insert into events (type, date, user) values(3, strftime("%s", "now", "-2 days"), 2);
+insert into events (type, date, user) values(4, strftime("%s", "now", "-3 days"), 2);
+insert into events (type, date, user) values(5, strftime("%s", "now", "-4 days"), 2);
+insert into events (type, date, user) values(9, strftime("%s", "now", "-5 days"), 2);
+insert into events (type, date, user) values(10, strftime("%s", "now", "-6 days"), 2);
+insert into events (type, date, user) values(11, strftime("%s", "now", "-7 days"), 2);
 insert into events (type, date, user) values(2, strftime("%s", "now", "-8 days"), 2);
 insert into events (type, date, user) values(2, strftime("%s", "now", "-9 days"), 2);
 insert into events (type, date, user) values(2, strftime("%s", "now", "-10 days"), 2);
