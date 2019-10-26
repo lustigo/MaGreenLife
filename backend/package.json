@@ -4,8 +4,8 @@
   "description": "Gameification Application for climate friendly behavior. Developed during #climathonMA",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node dist/index.js"
+    "start": "tsc && node --require dotenv/config dist/index.js",
+    "initDb": "sqlite3 main.sqlite < main.sql && node --require dotenv/config dist/initRnvDb.js"
   },
   "repository": {
     "type": "git",
@@ -25,12 +25,14 @@
   },
   "homepage": "https://github.com/lustigo/magreenlife#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "got": "^9.6.0",
     "http-status-codes": "^1.3.2",
     "koa": "^2.10.0",
     "koa-bodyparser": "^1.6.0",
     "koa-cors": "0.0.16",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "sqlite": "^3.0.3"
   },
   "devDependencies": {
     "@types/got": "^9.6.7",
