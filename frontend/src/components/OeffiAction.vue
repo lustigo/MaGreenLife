@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card class="mx-auto" outlined>
+    <v-card outlined>
       <v-card-text>
         <div class="headline mb-1 text--primary">Abfahrtsbahnhof</div>
         <div>Von welchem Bahnhof fährst du ab?</div>

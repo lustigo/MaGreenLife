@@ -49,9 +49,42 @@ export default {
   },
   methods: {
     checkIn() {
-      //TODO: Add Points 2x
-      //TODO: Save Action
-      console.log("GO");
+      fetch("http://localhost:4000/points", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          uid: localStorage.uid,
+          eventtype: 2
+        })
+      });
+      fetch("http://localhost:4000/points", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          uid: localStorage.uid,
+          eventtype: 3
+        })
+      });
+
+      fetch("http://localhost:4000/sendAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          type: "rnvOccupancy",
+          tourId: this.transportInfo.tourId,
+          positionInTour: this.transportInfo.positionInTour,
+          lineId: this.transportInfo.lineId,
+          time: this.transportInfo.time,
+          uid: localStorage.uid,
+          occupancy: this.occupation
+        })
+      });
       this.sent = true;
     }
   }
