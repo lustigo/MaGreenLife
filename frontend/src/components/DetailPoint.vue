@@ -4,13 +4,20 @@
       <v-list>
         <v-subheader>History</v-subheader>
         <v-card v-for="(item, i) in history" :key="i">
-          <v-container>
+          <v-container v-if="typeof item.description === 'string'">
             <v-row>
               <v-col cols="3" class="pointAmount">+{{ item.score }}</v-col>
               <v-col>
                 <v-card flat class="item-text">{{ item.description }}</v-card>
               </v-col>
             </v-row>
+          </v-container>
+          <v-container v-if="typeof item.description === 'object'">
+            <Achievement
+              :title="item.description.title"
+              :description="item.description.description"
+              :image="item.description.image"
+            ></Achievement>
           </v-container>
         </v-card>
       </v-list>
@@ -24,6 +31,7 @@
 
 <script>
 import FriendFeed from "./FriendFeed.vue";
+import Achievement from "./Achievement.vue";
 export default {
   data: () => ({
     history: [
@@ -38,7 +46,8 @@ export default {
     ]
   }),
   components: {
-    FriendFeed
+    FriendFeed,
+    Achievement
   },
   created() {
     this.loadData();

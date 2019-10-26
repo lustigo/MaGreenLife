@@ -45,7 +45,11 @@
     </div>
     <div class="divOnMain">
       <v-fade-transition appear>
-        <Achievement></Achievement>
+        <Achievement
+          title="Kilo Saver"
+          description="You saved 10 cups and 1KG of CO2!"
+          image="https://images.unsplash.com/photo-1569488859134-24b2d490f23f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=640&q=80"
+        ></Achievement>
       </v-fade-transition>
     </div>
     <div class="divOnMain">
