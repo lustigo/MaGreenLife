@@ -55,7 +55,7 @@ export default {
             params: { hafasId: station.hafasId }
           });
         })
-        .catch(console.log);
+        .catch();
     }
   }
 };
