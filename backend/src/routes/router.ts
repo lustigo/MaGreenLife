@@ -1,4 +1,5 @@
 import Router from 'koa-router';
+import rnvGetStationMW from './getStation';
 import rnvGetStationMonitorMW from './getStationMonitor';
 import {PointsGet, PointsPost} from './points';
 import QuestionMW from './question';
@@ -28,5 +29,7 @@ router.get('/getQuestionOfDay', QuestionMW);
  * Body: hafasId (Number)
  */
 router.post('/getStationMonitor', rnvGetStationMonitorMW);
+
+router.post('/getStation', rnvGetStationMW);
 
 export default router;
