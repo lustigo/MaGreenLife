@@ -26,7 +26,13 @@ async function PointsHistory(ctx: any) {
     INNER JOIN eventtype ON eventtype.id = events.type
     INNER JOIN users ON events.user = users.id
     WHERE  events.user = ${ctx.request.query.uid}`;
-  ctx.body = await ctx.db.all(sql);
+  const result = await ctx.db.all(sql);
+
+  for (const user of result) {
+    user.description = user.description_personal;
+  }
+
+  ctx.body = result;
 }
 
 async function PointsOfFriendsHistory(ctx: any) {
@@ -37,6 +43,11 @@ async function PointsOfFriendsHistory(ctx: any) {
     WHERE (events.user IN (select follows from friendlist where friendlist.user = ${ctx.request.query.uid})) OR events.user = ${ctx.request.query.uid}
     `
   );
+
+  for (const user of result) {
+    user.description = user.description.replace('%1', user.name);
+  }
+
   ctx.body = result;
 }
 
