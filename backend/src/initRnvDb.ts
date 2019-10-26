@@ -16,7 +16,7 @@ async function initRnvDb(filename: string) {
         );`);
 
     for (const value of response.stations) {
-        await db.all(SQL`INSERT INTO "rnv" ("hafasId", "longName", "longitude", "latitude") VALUES (${value.hafasId}, ${value.longName}, ${value.latitude}, ${value.longitude})`);
+        await db.all(SQL`INSERT INTO "rnv" ("hafasId", "longName", "longitude", "latitude") VALUES (${value.hafasID}, ${value.longName}, ${value.latitude}, ${value.longitude})`);
     }
 }
 
