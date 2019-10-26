@@ -3,7 +3,7 @@
     <v-card class="mx-auto" max-width="300">
       <v-list dense>
         <v-subheader>Aktionen</v-subheader>
-        <v-list-item-group v-model="item" color="primary">
+        <v-list-item-group color="primary">
           <v-list-item
             v-for="(item, i) in items"
             :key="i"
