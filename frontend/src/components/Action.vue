@@ -37,7 +37,9 @@ export default {
         {
           text: "Ideen für das Stadtklima einreichen",
           icon: "mdi-city",
-          action: () => {}
+          action: () => {
+            this.$router.push("/action/cup");
+          }
         }
       ]
     };
