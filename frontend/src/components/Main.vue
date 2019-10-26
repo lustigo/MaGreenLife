@@ -3,7 +3,7 @@
     <div class="divOnMain">
       <v-card id="pointTotal">
         <button v-on:click="navToDetailPointView" id="pointNumber">
-          <span>250</span>
+          <span>{{ points }}</span>
         </button>
         <v-btn
           id="floating"
@@ -46,10 +46,15 @@ import Achievement from "./Achievement.vue";
 import FriendFeed from "./FriendFeed";
 
 export default {
-  data: () => ({}),
+  data: () => ({
+    points: ""
+  }),
   components: {
     Achievement,
     FriendFeed
+  },
+  created() {
+    this.loadData();
   },
   methods: {
     navToDetailPointView() {
@@ -57,6 +62,13 @@ export default {
     },
     navToScanCup() {
       this.$router.push({ path: "/action/cup" }).catch(() => {});
+    },
+    loadData() {
+      fetch(`http://localhost:4000/points?uid=${localStorage.uid}`)
+        .then(r => r.json())
+        .then(r => {
+          this.points = r.score;
+        });
     }
   }
 };
