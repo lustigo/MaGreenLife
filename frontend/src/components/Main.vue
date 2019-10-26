@@ -3,7 +3,7 @@
     <div class="divOnMain">
       <v-card id="pointTotal">
         <button v-on:click="navToDetailPointView" id="pointNumber">
-          <span>{{ points }}</span>
+          <span>{{ animationPoints }}</span>
         </button>
         <v-btn
           id="floating"
@@ -33,7 +33,9 @@
       </v-row>
     </div>
     <div class="divOnMain">
-      <Achievement></Achievement>
+      <v-fade-transition appear>
+        <Achievement></Achievement>
+      </v-fade-transition>
     </div>
     <div class="divOnMain">
       <FriendFeed></FriendFeed>
@@ -47,7 +49,8 @@ import FriendFeed from "./FriendFeed";
 
 export default {
   data: () => ({
-    points: ""
+    points: undefined,
+    animationPoints: 0
   }),
   components: {
     Achievement,
@@ -55,6 +58,7 @@ export default {
   },
   created() {
     this.loadData();
+    this.animatePoints();
   },
   methods: {
     navToDetailPointView() {
@@ -69,6 +73,14 @@ export default {
         .then(r => {
           this.points = r.score;
         });
+    },
+    animatePoints() {
+      this.animationPoints = this.animationPoints + 15;
+      if (this.points !== undefined && this.animationPoints >= this.points) {
+        this.animationPoints = this.points;
+      } else {
+        setTimeout(this.animatePoints, 1000 / 30);
+      }
     }
   }
 };
