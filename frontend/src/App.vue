@@ -27,6 +27,11 @@
 <script>
 export default {
   name: "app",
+  created() {
+    if (!localStorage.uid) {
+      localStorage.uid = 1;
+    }
+  },
   methods: {
     navMain: function() {
       this.$router.push({ path: "/" }).catch(() => {});
