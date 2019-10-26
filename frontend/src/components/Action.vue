@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-card class="mx-auto" max-width="300">
-      <v-list dense>
+    <v-card>
+      <v-list>
         <v-subheader>Aktionen</v-subheader>
         <v-list-item-group color="primary">
           <v-list-item

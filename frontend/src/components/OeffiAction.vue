@@ -5,12 +5,21 @@
         <div class="headline mb-1 text--primary">Abfahrtsbahnhof</div>
         <div>Von welchem Bahnhof fährst du ab?</div>
       </v-card-text>
-      <v-text-field outlined color="accent" v-model="query" @keyup.enter.native="searchStation"></v-text-field>
-      <v-btn outlined color="accent" block v-on:click="searchStation">Weiter</v-btn>
+      <v-text-field
+        outlined
+        color="accent"
+        v-model="query"
+        @keyup.enter.native="searchStation"
+      ></v-text-field>
+      <v-btn outlined color="accent" block v-on:click="searchStation"
+        >Weiter</v-btn
+      >
     </v-card>
     <v-card style="margin-top: 5px;">
       <v-card class="mx-auto" outlined id="imageTrains">
-        <v-img src="https://cdn.pixabay.com/photo/2018/09/30/19/03/metro-3714290_960_720.jpg"></v-img>
+        <v-img
+          src="https://cdn.pixabay.com/photo/2018/09/30/19/03/metro-3714290_960_720.jpg"
+        ></v-img>
       </v-card>
     </v-card>
   </v-container>

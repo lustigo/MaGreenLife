@@ -9,9 +9,9 @@
             .add(1, 'days')
             .isBefore(moment())
         "
+        >Du hast heute bereits die Frage beantwortet, komm morgen
+        wieder.</v-alert
       >
-        Du hast heute bereits die Frage beantwortet, komm morgen wieder.
-      </v-alert>
       <p
         v-else-if="
           this.answered
@@ -29,8 +29,6 @@
             .add(1, 'days')
             .isBefore(moment())
         "
-        class="mx-auto"
-        max-width="344"
         outlined
       >
         <v-card-text>
@@ -39,19 +37,19 @@
           <div>{{ this.question.question }}</div>
         </v-card-text>
         <div>
-          <v-btn outlined block color="accent" v-on:click="solve(0)">{{
-            this.question.answers[0]
-          }}</v-btn>
+          <v-btn outlined block color="accent" v-on:click="solve(0)">
+            {{ this.question.answers[0] }}
+          </v-btn>
         </div>
         <div>
-          <v-btn outlined block color="accent" v-on:click="solve(1)">{{
-            this.question.answers[1]
-          }}</v-btn>
+          <v-btn outlined block color="accent" v-on:click="solve(1)">
+            {{ this.question.answers[1] }}
+          </v-btn>
         </div>
         <div>
-          <v-btn outlined block color="accent" v-on:click="solve(2)">{{
-            this.question.answers[2]
-          }}</v-btn>
+          <v-btn outlined block color="accent" v-on:click="solve(2)">
+            {{ this.question.answers[2] }}
+          </v-btn>
         </div>
       </v-card>
 

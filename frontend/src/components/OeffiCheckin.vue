@@ -1,14 +1,12 @@
 <template>
   <v-container>
-    <v-card class="mx-auto" max-width="344" raised v-if="!sent">
-      <v-card-text>
-        <div class="headline mb-1 text--primary">Check-In</div>
-        <div>Fahrt nach {{ transportInfo.direction }}</div>
-      </v-card-text>
-      <v-card class="mx-auto" outlined>
-        <v-card-title class="headline text--primary mb-1"
-          >Wie voll ist das Fahrzeug?</v-card-title
-        >
+    <v-card raised v-if="!sent">
+      <v-card-subtitle>Check-In</v-card-subtitle>
+      <v-card-subtitle style="font-size: 1.5em"
+        >Fahrt nach {{ transportInfo.direction }}</v-card-subtitle
+      >
+      <v-card outlined>
+        <v-card-subtitle>Wie voll ist das Fahrzeug?</v-card-subtitle>
         <v-btn-toggle v-model="occupation">
           <v-btn raised icon color="accent">
             <v-icon>mdi-account</v-icon>
@@ -31,10 +29,9 @@
       v-if="!sent"
       >Check-In</v-btn
     >
-    <v-alert type="success" v-if="sent"
-      >Sehr gut! Bahnfahren schützt das Klima. Du hast 60 Punkte
-      erhalten.</v-alert
-    >
+    <v-alert type="success" v-if="sent">
+      Sehr gut! Bahnfahren schützt das Klima. Du hast 60 Punkte erhalten.
+    </v-alert>
   </v-container>
 </template>
 
