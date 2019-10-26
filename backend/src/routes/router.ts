@@ -3,8 +3,8 @@ import rnvGetStationMW from "./getStation";
 import rnvGetStationMonitorMW from "./getStationMonitor";
 import {
   PointsGet,
-  PointsPost,
   PointsHistory,
+  PointsPost,
   PointsOfFriendsHistory
 } from "./points";
 import QuestionMW from "./question";

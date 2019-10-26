@@ -16,7 +16,10 @@ async function PointsPost(ctx: any) {
   ctx.status = 200;
 }
 
-async function getPointHistory(uid: Number, ctx: any) {}
+async function getPointHistory(uid: number, ctx: any) {
+  const sql = `select * from eventtype, events where eventtype.id = events.type and events.user = ${uid}`;
+  return ctx.db.get(sql);
+}
 
 async function PointsHistory(ctx: any) {
   const sql = `select * from events 

@@ -5,6 +5,7 @@ import DetailPointsView from "./components/DetailPoint.vue";
 import Action from "./components/Action.vue";
 import OeffiAction from "./components/OeffiAction.vue";
 import ScanCup from "./components/ScanCup.vue";
+import SelStation from "./components/OeffiSelStation.vue";
 
 const router = new Router({
   routes: [
@@ -14,6 +15,7 @@ const router = new Router({
     { path: "/", component: Main },
     { path: "/detailPoints", component: DetailPointsView },
     { path: "/action/cup", component: ScanCup },
+    { path: "/action/oeffi/selStation/:hafasId", name: "selStation", component: SelStation },
     { path: "/", component: Main }
   ]
 });
