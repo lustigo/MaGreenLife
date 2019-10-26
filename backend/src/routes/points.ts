@@ -1,6 +1,6 @@
 async function PointsGet(ctx: any) {
   const score = await ctx.db.get(
-    `select count(score) count from eventtype, events where eventtype.id = events.type and events.user = ${ctx.request.query.uid}`
+    `select sum(score) count from eventtype, events where eventtype.id = events.type and events.user = ${ctx.request.query.uid}`
   );
   ctx.body = { score: score.count };
 }
