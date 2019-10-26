@@ -6,10 +6,10 @@
       <v-card v-for="(item, i) in friends" :key="i">
         <v-container>
           <v-row>
-            <v-col cols="2" class="rank">{{ i+1 }}</v-col>
+            <v-col cols="2" class="rank">{{ i + 1 }}</v-col>
             <v-col>
               <v-card flat class="item">
-                <v-card-title>{{item.name }}</v-card-title>
+                <v-card-title>{{ item.name }}</v-card-title>
                 <v-card-subtitle>{{ item.COUNT }}</v-card-subtitle>
               </v-card>
             </v-col>
