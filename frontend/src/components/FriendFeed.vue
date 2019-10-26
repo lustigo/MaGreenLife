@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <div>
     <v-list>
       <v-subheader>Friend Feed</v-subheader>
 
@@ -14,7 +14,7 @@
         </v-container>
       </v-card>
     </v-list>
-  </v-card>
+  </div>
 </template>
 
 <script>
