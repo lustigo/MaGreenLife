@@ -46,7 +46,7 @@ async function FriendsRannking(ctx: any) {
     INNER JOIN eventtype ON eventtype.id = events.type
     INNER JOIN users ON events.user = users.id
     WHERE (events.user IN (select follows from friendlist where friendlist.user = ${ctx.request.query.uid})) OR events.user = ${ctx.request.query.uid}
-    GROUP BY users.username
+    GROUP BY users.username ORDER BY 'COUNT'
     `
   );
   ctx.body = result;

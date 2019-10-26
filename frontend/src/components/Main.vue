@@ -18,6 +18,17 @@
         >
           <v-icon>mdi-plus</v-icon>
         </v-btn>
+        <v-btn
+          id="floatingRanking"
+          color="secondary"
+          dark
+          small
+          absolute
+          fab
+          v-on:click="navToRanking"
+        >
+          <v-icon>mdi-podium-gold</v-icon>
+        </v-btn>
       </v-card>
     </div>
     <div class="divOnMain">
@@ -67,6 +78,9 @@ export default {
     navToScanCup() {
       this.$router.push({ path: "/action/cup" }).catch(() => {});
     },
+    navToRanking() {
+      this.$router.push({ path: "/ranking" }).catch(() => {});
+    },
     loadData() {
       fetch(`http://localhost:4000/points?uid=${localStorage.uid}`)
         .then(r => r.json())
@@ -103,5 +117,9 @@ export default {
 #floating {
   top: 20px;
   right: 20px;
+}
+#floatingRanking {
+  left: 0px;
+  bottom: 0px;
 }
 </style>
