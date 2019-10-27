@@ -10,7 +10,7 @@
             <h1>{{ title }}</h1>
           </v-row>
           <v-row>
-            <v-card-text>{{ description }}</v-card-text>
+            <div id="cardText">{{ description }}</div>
           </v-row>
         </v-col>
       </v-row>
@@ -24,3 +24,9 @@ export default {
   props: ["title", "description", "user", "image"]
 };
 </script>
+<style scoped>
+#cardText {
+  padding-left: 0px;
+  padding-top: 1em;
+}
+</style>
