@@ -82,7 +82,7 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    fetch("http://localhost:4000/getQuestionOfDay")
+    fetch(process.env.VUE_APP_BACKEND_URL + "/getQuestionOfDay")
       .then(q => q.json().then(question => next(vm => vm.setData(question))))
       .catch(err => next(vm => vm.setError(err)));
   },
@@ -104,7 +104,7 @@ export default {
     },
     solve(answer) {
       if (answer == this.question.correctAnswerIndex) {
-        fetch("http://localhost:4000/points", {
+        fetch(process.env.VUE_APP_BACKEND_URL + "/points", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

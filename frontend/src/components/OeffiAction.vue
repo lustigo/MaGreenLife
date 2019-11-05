@@ -38,7 +38,7 @@ export default {
         return;
       }
 
-      const resp = await fetch("http://localhost:4000/getStation", {
+      const resp = await fetch(process.env.VUE_APP_BACKEND_URL + "/getStation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -17,7 +17,7 @@ export default {
   methods: {
     onDecode(code) {
       if (/^mgl-cup/.test(code)) {
-        fetch("http://localhost:4000/points", {
+        fetch(process.env.VUE_APP_BACKEND_URL + "/points", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

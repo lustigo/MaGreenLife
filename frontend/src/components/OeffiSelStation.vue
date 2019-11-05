@@ -40,7 +40,7 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next) {
-    fetch("http://localhost:4000/getStationMonitor", {
+    fetch(process.env.VUE_APP_BACKEND_URL + "/getStationMonitor", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

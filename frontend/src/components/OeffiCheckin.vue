@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     checkIn() {
-      fetch("http://localhost:4000/points", {
+      fetch(process.env.VUE_APP_BACKEND_URL + "/points", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -59,7 +59,7 @@ export default {
           eventtype: 2
         })
       });
-      fetch("http://localhost:4000/points", {
+      fetch(process.env.VUE_APP_BACKEND_URL + "/points", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -70,7 +70,7 @@ export default {
         })
       });
 
-      fetch("http://localhost:4000/sendAction", {
+      fetch(process.env.VUE_APP_BACKEND_URL + "/sendAction", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -86,7 +86,7 @@ export default {
       this.$router.push({ path: "/ranking" }).catch(() => {});
     },
     loadData() {
-      fetch(`http://localhost:4000/points?uid=${localStorage.uid}`)
+      fetch(process.env.VUE_APP_BACKEND_URL + `/points?uid=${localStorage.uid}`)
         .then(r => r.json())
         .then(r => {
           this.points = r.score;

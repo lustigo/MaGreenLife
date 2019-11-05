@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     loadData() {
-      fetch(`http://localhost:4000/ranking?uid=${localStorage.uid}`)
+      fetch(process.env.VUE_APP_BACKEND_URL + `/ranking?uid=${localStorage.uid}`)
         .then(r => r.json())
         .then(r => {
           this.friends = r;

@@ -38,7 +38,10 @@ export default {
   },
   methods: {
     loadData() {
-      fetch(`http://localhost:4000/friendHistory?uid=${localStorage.uid}`)
+      fetch(
+        process.env.VUE_APP_BACKEND_URL +
+          `/friendHistory?uid=${localStorage.uid}`
+      )
         .then(r => r.json())
         .then(r => {
           this.friendItems = r;
