@@ -28,6 +28,7 @@ For our prototype we have implemented a leaderboard, the achievement and point c
 
 This project is split into 2 root directories (`frontend` and `backend`).
 Both do maintain their own dependencies (`with npm`) independent of each other.
+In case you want to deploy it yourself (keep in mind this is a prototype and NOT meant to, due to some security flaws), have a look at `docker-compose.yml` in project's root. You might want to rename `.env-example` to `.env` and edit the relevant parts, as the docker-compose file uses env vars.
 
 ### Prerequisites
 
