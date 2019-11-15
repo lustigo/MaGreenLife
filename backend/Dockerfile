@@ -1,12 +1,9 @@
 FROM node:latest as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
 COPY ./ .
-RUN apt-get update && apt-get install sqlite3
-RUN npm run setup
-RUN npm run initDb
 
+RUN npm install && apt-get update && apt-get install sqlite3 && npm run setup && npm run initDb
 
 CMD npm run start
 
