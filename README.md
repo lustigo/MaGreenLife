@@ -2,6 +2,11 @@
 
 > 🚀 This project was realized within 40h as of the [Climathon2019](https://climathon.hackerstolz.de) in Mannheim.
 
+## 💻 Demo
+Check out the life demo at [https://magreenlife.ekaack.de](https://magreenlife.ekaack.de) (mobile preferred)
+
+or watch [Screencast on Youtube](https://youtu.be/H3hWl3BcjyY)
+
 ## 🎉 Idea
 
 MaGreenLife rewards the user for climate-friendly behavior and gives the city or public transport organisation a possibility to gather data and ideas from their fellow users.
@@ -48,6 +53,3 @@ More detailed [README.md](backend/README.md) with introductions how to run.
 |:---:|:---:|:---:|
 |![Main](https://raw.githubusercontent.com/lustigo/MaGreenLife/master/screenshots/main.png)|![Quiz](https://raw.githubusercontent.com/lustigo/MaGreenLife/master/screenshots/quiz.png)|![trainOverview](https://raw.githubusercontent.com/lustigo/MaGreenLife/master/screenshots/trainOverview.png)|
 |![Report number of people in tram](https://raw.githubusercontent.com/lustigo/MaGreenLife/master/screenshots/reportNumberOfPeople.png)| | |
-
-## 📹️ Demo
-See our prototype in action [here (YT)](https://youtu.be/H3hWl3BcjyY)
