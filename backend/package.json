@@ -33,7 +33,8 @@
     "koa-bodyparser": "^1.6.0",
     "koa-cors": "0.0.16",
     "koa-router": "^7.4.0",
-    "sqlite": "^3.0.3"
+    "sqlite": "^3.0.3",
+    "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@types/got": "^9.6.7",

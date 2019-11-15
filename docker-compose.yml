@@ -4,12 +4,18 @@ services:
     build:
       context: backend/
       dockerfile: Dockerfile
+      args:
+        - RNVAPITOKEN=${RNVAPITOKEN}
     container_name: magreenlife-backend
+    environment:
+      - RNVAPITOKEN=${RNVAPITOKEN}
     restart: always
   frontend:
     build:
       context: frontend/
       dockerfile: Dockerfile
+      args:
+        - VUE_APP_BACKEND_URL=${VUE_APP_BACKEND_URL}
     container_name: magreenlife-frontend
     restart: always
     depends_on:

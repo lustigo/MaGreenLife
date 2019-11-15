@@ -2,3 +2,4 @@
 **/dist
 main.sqlite
 rnv.sqlite
+.env*

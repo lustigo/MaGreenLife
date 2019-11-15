@@ -1,11 +1,10 @@
-FROM node:latest as build-stage
+FROM node:alpine as build-stage
+ARG VUE_APP_BACKEND_URL
 WORKDIR /app
 COPY package*.json ./
-COPY ./ .
-RUN npm install &&  npm run build && npm install http-server -g
+RUN npm install
+COPY . .
+RUN npm run build
 
-WORKDIR dist/
-
-CMD http-server
-
-EXPOSE 8080
+FROM nginx:alpine
+COPY --from=build-stage /app/dist /usr/share/nginx/html
